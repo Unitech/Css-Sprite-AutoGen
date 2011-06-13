@@ -1,0 +1,99 @@
+(dp1
+S'data_preview'
+p2
+S'/home/www-data/web2py/applications/css_sprite/static/rendered/rendered-f3434c76-89fe-11e0-9388-3b0b55a66bc1.html'
+p3
+sS'data_img'
+p4
+(lp5
+S'<style type="text/css">\n.wsa{\nbackground-image : url("rendered-f3434c76-89fe-11e0-9388-3b0b55a66bc1.png");\n}\n</style>'
+p6
+aS'<!-- File : bratz-in-venice.jpg -->'
+p7
+aS'<div class="wsa" style="background-position : -0px 0px; width : 180px; height : 135px;"></div>'
+p8
+aS'<!-- File : butterfly-catching.jpg -->'
+p9
+aS'<div class="wsa" style="background-position : -180px 0px; width : 180px; height : 135px;"></div>'
+p10
+aS'<!-- File : combine-ultra.jpg -->'
+p11
+aS'<div class="wsa" style="background-position : -360px 0px; width : 180px; height : 135px;"></div>'
+p12
+aS'<!-- File : forest-fairy-costumes.jpg -->'
+p13
+aS'<div class="wsa" style="background-position : -540px 0px; width : 180px; height : 135px;"></div>'
+p14
+aS'<!-- File : flower-garden-coloring.jpg -->'
+p15
+aS'<div class="wsa" style="background-position : -720px 0px; width : 180px; height : 135px;"></div>'
+p16
+aS'<!-- File : fabulous-queen.jpg -->'
+p17
+aS'<div class="wsa" style="background-position : -900px 0px; width : 180px; height : 135px;"></div>'
+p18
+aS'<!-- File : instant-noodles.jpg -->'
+p19
+aS'<div class="wsa" style="background-position : -1080px 0px; width : 180px; height : 135px;"></div>'
+p20
+aS'<!-- File : kissing-under-the-sea.jpg -->'
+p21
+aS'<div class="wsa" style="background-position : -1260px 0px; width : 180px; height : 135px;"></div>'
+p22
+aS'<!-- File : ladygaga-dressup.jpg -->'
+p23
+aS'<div class="wsa" style="background-position : -1440px 0px; width : 180px; height : 135px;"></div>'
+p24
+aS'<!-- File : lovely-pizza.jpg -->'
+p25
+aS'<div class="wsa" style="background-position : -1620px 0px; width : 180px; height : 135px;"></div>'
+p26
+aS'<!-- File : lisas-fantasy-collection.jpg -->'
+p27
+aS'<div class="wsa" style="background-position : -1800px 0px; width : 180px; height : 135px;"></div>'
+p28
+aS'<!-- File : naan-bread-cooking.jpg -->'
+p29
+aS'<div class="wsa" style="background-position : -1980px 0px; width : 180px; height : 135px;"></div>'
+p30
+aS'<!-- File : ninja-stealth.jpg -->'
+p31
+aS'<div class="wsa" style="background-position : -2160px 0px; width : 180px; height : 135px;"></div>'
+p32
+aS'<!-- File : playground-decoration.jpg -->'
+p33
+aS'<div class="wsa" style="background-position : -2340px 0px; width : 180px; height : 135px;"></div>'
+p34
+aS'<!-- File : polka-dots.jpg -->'
+p35
+aS'<div class="wsa" style="background-position : -2520px 0px; width : 180px; height : 135px;"></div>'
+p36
+aS'<!-- File : rihannadressup.jpg -->'
+p37
+aS'<div class="wsa" style="background-position : -2700px 0px; width : 180px; height : 135px;"></div>'
+p38
+aS'<!-- File : snorkeling-dive-trip.jpg -->'
+p39
+aS'<div class="wsa" style="background-position : -2880px 0px; width : 180px; height : 135px;"></div>'
+p40
+aS'<!-- File : spaghetti-meatballs.jpg -->'
+p41
+aS'<div class="wsa" style="background-position : -3060px 0px; width : 180px; height : 135px;"></div>'
+p42
+aS'<!-- File : spring-walk-dress-up.jpg -->'
+p43
+aS'<div class="wsa" style="background-position : -3240px 0px; width : 180px; height : 135px;"></div>'
+p44
+aS'<!-- File : street-punk-style-dress-up.jpg -->'
+p45
+aS'<div class="wsa" style="background-position : -3420px 0px; width : 180px; height : 135px;"></div>'
+p46
+asS'uuid'
+p47
+S'291f208c-8a17-11e0-8996-3b0b55a66bc1'
+p48
+sS'file_dest'
+p49
+S'/css_sprite/static/rendered/rendered-f3434c76-89fe-11e0-9388-3b0b55a66bc1.png'
+p50
+s.

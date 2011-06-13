@@ -1,0 +1,18 @@
+(dp1
+S'ns'
+p2
+S'CHAR(512)'
+p3
+sS'id'
+p4
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p5
+sS'file'
+p6
+S'CHAR(512)'
+p7
+sS'name'
+p8
+S'CHAR(512)'
+p9
+s.

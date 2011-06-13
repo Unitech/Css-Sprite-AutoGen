@@ -1,0 +1,31 @@
+(dp1
+S'data_preview'
+p2
+S'/home/www-data/web2py/applications/css_sprite/static/rendered/rendered-b09c9402-8c8a-11e0-b85d-d3502f2a87d6.html'
+p3
+sS'data_img'
+p4
+(lp5
+S'<style type="text/css">\n.wsa{\nbackground-image : url("rendered-b09c9402-8c8a-11e0-b85d-d3502f2a87d6.png");\n}\n</style>'
+p6
+aS'<!-- File : beating-a-dead-horse[1].gif -->'
+p7
+aS'<div class="wsa" style="background-position : -0px 0px; width : 383px; height : 230px;"></div>'
+p8
+aS'<!-- File : CodeCoverageResults.jpg -->'
+p9
+aS'<div class="wsa" style="background-position : -383px 0px; width : 1211px; height : 761px;"></div>'
+p10
+aS'<!-- File : CRAZZEEEE.gif -->'
+p11
+aS'<div class="wsa" style="background-position : -1594px 0px; width : 150px; height : 107px;"></div>'
+p12
+asS'uuid'
+p13
+S'9766f158-8c8a-11e0-a5ad-d3502f2a87d6'
+p14
+sS'file_dest'
+p15
+S'/css_sprite/static/rendered/rendered-b09c9402-8c8a-11e0-b85d-d3502f2a87d6.png'
+p16
+s.

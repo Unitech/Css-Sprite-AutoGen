@@ -1,0 +1,496 @@
+(dp1
+S'output'
+p2
+S''
+sS'layer'
+p3
+S'/home/www-data/web2py/applications/css_sprite/controllers/default.py'
+p4
+sS'code'
+p5
+S'# -*- coding: utf-8 -*- \n# this file is released under public domain and you can use without limitations\n\n#########################################################################\n## This is a samples controller\n## - index is the default action of any application\n## - user is required for authentication and authorization\n## - download is for downloading files uploaded in the db (does streaming)\n## - call exposes all registered services (none by default)\n#########################################################################\n\nimport logging\nimport os\n#import deleteFile\n\ndef index():\n    import uuid\n    session.uuid = str(uuid.uuid1())\n    logger.debug(\'\\n\\n------- New UUID : \' + session.uuid)\n    return dict()\n\ndef upload():\n    for r in request.vars:\n        if r=="qqfile":\n            filename=request.vars.qqfile\n            logger.debug(\'New file uploading : \' + filename)\n            db.upload.insert(file=db.upload.file.store(request.body,filename),\n                             name=filename,\n                             ns=session.uuid)\n            return response.json({\'success\':\'false\'})\n\ndef factor():\n    import uuid\n    logger.info(\'New refactoring in progress from \' + request.env.remote_addr)\n    query = (db.upload.ns==session.uuid)\n    rows = db(query).select()\n    file_path = []\n    file_raw = []\n    f_uuid = str(uuid.uuid1())\n    file_dest = os.path.join(request.folder, \'static/rendered\', \'rendered-\' + f_uuid + \'.png\')\n    # put name file in session\n    session.file_dest = os.path.join(\'/\', request.application, \'static/rendered\', \'rendered-\' + f_uuid + \'.png\')\n    # creating list file\n    for tmp in rows:\n        file_path.append(os.path.join(request.folder, \'uploads\', tmp[\'file\']))\n        file_raw.append(tmp[\'name\'])\n        logger.debug(\'File usage : \' + os.path.join(request.folder, \'uploads\', tmp[\'file\']))\n    # MAIN SOFT\n    logger.debug(\'Importing concateImages\')\n    concateImage = local_import(\'concateImage\', reload=True)\n    try:\n        session.data_img, session.data_preview = concateImage.concate_image(file_dest, file_path, file_raw, logger)\n    except IOError:\n        # Error handling\n        logger.error(\'Wrong file type\')\n        db(query).delete()\n        return response.json({\'success\':\'true\', \'processing\' : \'failed\'})\n    # delete all files with session uuid\n    logger.debug(\'Deleting tmp files\')\n    db(query).delete()\n    return response.json({\'success\':\'true\', \'processing\' : \'done\',\'redirect\' : \'/\' + request.application + \'/default/\' + \'processed\'})\n\ndef processed():\n    preview = session.file_dest.replace(\'.png\', \'-thumb.png\')\n    css_tag = session.data_img[0]\n    html = session.data_preview.split(\'/\')[-3:]\n    html_preview = os.path.join(\'/\', request.application, html[0], html[1], html[2])\n#    print html_preview\n    return dict(url=session.file_dest, preview=preview, data=session.data_img[1:], css_tag=css_tag, html=html_preview)\n\ndef user():\n    return dict(form=auth())\n\n#def download():\n    \n\ndef _download():\n    import gluon.contenttype\n    response.headers[\'Content-Type\']=gluon.contenttype.contenttype(\'.png\')\n    return response.stream(open(session.file_dest, \'rb\'))\n\ndef call():\n    """\n    exposes services. for example:\n    http://..../[app]/default/call/jsonrpc\n    decorate with @services.jsonrpc the functions to expose\n    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv\n    """\n    session.forget()\n    print "MUAHAHHAHAHHA"\n    return service()\n\n\n\nresponse._vars=response._caller(upload)\n'
+p6
+sS'snapshot'
+p7
+(dp8
+S'exception'
+p9
+(dp10
+S'__hash__'
+p11
+S"<method-wrapper '__hash__' of exceptions.TypeError object at 0x9a2b9ec>"
+p12
+sS'__setattr__'
+p13
+S"<method-wrapper '__setattr__' of exceptions.TypeError object at 0x9a2b9ec>"
+p14
+sS'__reduce_ex__'
+p15
+S'<built-in method __reduce_ex__ of exceptions.TypeError object at 0x9a2b9ec>'
+p16
+sS'__getslice__'
+p17
+S"<method-wrapper '__getslice__' of exceptions.TypeError object at 0x9a2b9ec>"
+p18
+sS'__getitem__'
+p19
+S"<method-wrapper '__getitem__' of exceptions.TypeError object at 0x9a2b9ec>"
+p20
+sS'__setstate__'
+p21
+S'<built-in method __setstate__ of exceptions.TypeError object at 0x9a2b9ec>'
+p22
+sS'__reduce__'
+p23
+S'<built-in method __reduce__ of exceptions.TypeError object at 0x9a2b9ec>'
+p24
+sS'__str__'
+p25
+S"<method-wrapper '__str__' of exceptions.TypeError object at 0x9a2b9ec>"
+p26
+sS'args'
+p27
+S'("cannot concatenate \'str\' and \'instance\' objects",)'
+p28
+sS'__getattribute__'
+p29
+S"<method-wrapper '__getattribute__' of exceptions.TypeError object at 0x9a2b9ec>"
+p30
+sS'__class__'
+p31
+S"<type 'exceptions.TypeError'>"
+p32
+sS'__delattr__'
+p33
+S"<method-wrapper '__delattr__' of exceptions.TypeError object at 0x9a2b9ec>"
+p34
+sS'__repr__'
+p35
+S"<method-wrapper '__repr__' of exceptions.TypeError object at 0x9a2b9ec>"
+p36
+sS'__dict__'
+p37
+S'{}'
+p38
+sS'__doc__'
+p39
+S"'Inappropriate argument type.'"
+p40
+sS'__init__'
+p41
+S"<method-wrapper '__init__' of exceptions.TypeError object at 0x9a2b9ec>"
+p42
+sS'__new__'
+p43
+S'<built-in method __new__ of type object at 0xb6b958c0>'
+p44
+ssS'evalue'
+p45
+S"cannot concatenate 'str' and 'instance' objects"
+p46
+sS'request'
+p47
+(dp48
+S'function'
+p49
+S"'upload'"
+p50
+sS'body'
+p51
+S"<open file '<fdopen>', mode 'w+b' at 0x8f8c608>"
+p52
+sS'wsgi'
+p53
+S"<Storage {'start_response': <function <lambda> a...docs', 'HTTP_ACCEPT_ENCODING': 'gzip, deflate'}}>"
+p54
+sS'extension'
+p55
+S"'html'"
+p56
+sS'vars'
+p57
+S"<Storage {'qqfile': FieldStorage('qqfile', 'C:\\\\...xdf^b\\x88>\\x06_\\x00\\x00\\x00\\x00IEND\\xaeB`\\x82')}>"
+p58
+sS'url'
+p59
+S'<gluon.html.XML object at 0x8b84b0c>'
+p60
+sg27
+S'[]'
+p61
+sS'cookies'
+p62
+S"<SimpleCookie: __utma='210342152.1560532814.1307...41.218.132-42b54583-9b20-4635-85bc-79277f1b99d0'>"
+p63
+sS'application'
+p64
+S"'css_sprite'"
+p65
+sS'controller'
+p66
+S"'default'"
+p67
+sS'client'
+p68
+S"'121.241.218.132'"
+p69
+sS'is_restful'
+p70
+S'False'
+p71
+sS'env'
+p72
+S"<Storage {'content_length': '1282', 'script_file...alse, 'path_info': '/css_sprite/default/upload'}>"
+p73
+sS'ajax'
+p74
+g71
+sS'get_vars'
+p75
+S'<Storage {}>'
+p76
+sS'folder'
+p77
+S"'/home/www-data/web2py/applications/css_sprite/'"
+p78
+sS'now'
+p79
+S'datetime.datetime(2011, 6, 6, 15, 56, 40, 955928)'
+p80
+sS'post_vars'
+p81
+S"<Storage {'qqfile': FieldStorage('qqfile', 'C:\\\\...xdf^b\\x88>\\x06_\\x00\\x00\\x00\\x00IEND\\xaeB`\\x82')}>"
+p82
+ssS'frames'
+p83
+(lp84
+(dp85
+S'file'
+p86
+S'/home/www-data/web2py/gluon/restricted.py'
+p87
+sS'dump'
+p88
+(dp89
+S'environment'
+p90
+S"{'A': <class 'gluon.html.A'>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'CENTER': <class 'gluon.html.CENTER'>, 'CLEANUP': <class 'gluon.validators.CLEANUP'>, 'CODE': <class 'gluon.html.CODE'>, 'CRYPT': <class 'gluon.validators.CRYPT'>, ...}"
+p91
+sS'ccode'
+p92
+S'<code object <module> at 0x8f8cec0, file "/home/...ions/css_sprite/controllers/default.py", line 12>'
+p93
+ssS'lnum'
+p94
+I188
+sS'lines'
+p95
+(dp96
+I192
+S'        # XXX Show exception in Wing IDE if running in debugger'
+p97
+sI183
+S'        if type(code) == types.CodeType:'
+p98
+sI184
+S'            ccode = code'
+p99
+sI185
+S'        else:'
+p100
+sI186
+S'            ccode = compile2(code,layer)'
+p101
+sI187
+S''
+sI188
+S'        exec ccode in environment'
+p102
+sI189
+S'    except HTTP:'
+p103
+sI190
+S'        raise'
+p104
+sI191
+S'    except Exception:'
+p105
+ssS'call'
+p106
+S"(code='# -*- coding: utf-8 -*- \\n# this file is released...ice()\\n\\n\\n\\nresponse._vars=response._caller(upload)\\n', environment={'A': <class 'gluon.html.A'>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'CENTER': <class 'gluon.html.CENTER'>, 'CLEANUP': <class 'gluon.validators.CLEANUP'>, 'CODE': <class 'gluon.html.CODE'>, 'CRYPT': <class 'gluon.validators.CRYPT'>, ...}, layer='/home/www-data/web2py/applications/css_sprite/controllers/default.py')"
+p107
+sS'func'
+p108
+S'restricted'
+p109
+sa(dp110
+g86
+S'/home/www-data/web2py/applications/css_sprite/controllers/default.py'
+p111
+sg88
+(dp112
+sg94
+I95
+sg95
+(dp113
+I84
+S'    exposes services. for example:'
+p114
+sI85
+S'    http://..../[app]/default/call/jsonrpc'
+p115
+sI86
+S'    decorate with @services.jsonrpc the functions to expose'
+p116
+sI87
+S'    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv'
+p117
+sI88
+S'    """'
+p118
+sI89
+S'    session.forget()'
+p119
+sI90
+S'    print "MUAHAHHAHAHHA"'
+p120
+sI91
+S'    return service()'
+p121
+sI92
+S''
+sI93
+S''
+ssg106
+S'()'
+p122
+sg108
+S'<module>'
+p123
+sa(dp124
+g86
+S'/home/www-data/web2py/gluon/globals.py'
+p125
+sg88
+(dp126
+S'self'
+p127
+S'undefined'
+p128
+sS'f'
+S'<function upload at 0x8bb04c4>'
+p129
+ssg94
+I124
+sg95
+(dp130
+I128
+S''
+sI119
+S"        self.flash = ''           # used by the default view layout"
+p131
+sI120
+S'        self.meta = Storage()     # used by web2py_ajax.html'
+p132
+sI121
+S'        self.menu = []            # used by the default view layout'
+p133
+sI122
+S'        self.files = []           # used by web2py_ajax.html'
+p134
+sI123
+S'        self._vars = None'
+p135
+sI124
+S'        self._caller = lambda f: f()'
+p136
+sI125
+S'        self._view_environment = None'
+p137
+sI126
+S'        self._custom_commit = None'
+p138
+sI127
+S'        self._custom_rollback = None'
+p139
+ssg106
+S'(f=<function upload at 0x8bb04c4>)'
+p140
+sg108
+S'<lambda>'
+p141
+sa(dp142
+g86
+S'/home/www-data/web2py/applications/css_sprite/controllers/default.py'
+p143
+sg88
+(dp144
+S'global logger'
+p145
+S'<logging.Logger instance at 0x8f0eaec>'
+p146
+sS'filename'
+p147
+S"FieldStorage('qqfile', 'C:\\\\394046\\\\vobs\\\\JPP\\\\P...7\\xdf^b\\x88>\\x06_\\x00\\x00\\x00\\x00IEND\\xaeB`\\x82')"
+p148
+sS'logger.debug'
+p149
+S'<bound method Logger.debug of <logging.Logger instance at 0x8f0eaec>>'
+p150
+ssg94
+I26
+sg95
+(dp151
+I21
+S''
+sI22
+S'def upload():'
+p152
+sI23
+S'    for r in request.vars:'
+p153
+sI24
+S'        if r=="qqfile":'
+p154
+sI25
+S'            filename=request.vars.qqfile'
+p155
+sI26
+S"            logger.debug('New file uploading : ' + filename)"
+p156
+sI27
+S'            db.upload.insert(file=db.upload.file.store(request.body,filename),'
+p157
+sI28
+S'                             name=filename,'
+p158
+sI29
+S'                             ns=session.uuid)'
+p159
+sI30
+S"            return response.json({'success':'false'})"
+p160
+ssg106
+S'()'
+p161
+sg108
+S'upload'
+p162
+sasS'pyver'
+p163
+S'Python 2.5.2: /usr/bin/python'
+p164
+sS'session'
+p165
+(dp166
+S'uuid'
+p167
+S"'588b0034-9043-11e0-825c-230c6bfeddb0'"
+p168
+sS'_Session__hash'
+p169
+S"'\\xbd\\xfbh\\xc4\\x85\\xab\\x170\\xaf\\t\\x07\\x03\\xb4t\\xad\\xad'"
+p170
+ssS'etype'
+p171
+S"<type 'exceptions.TypeError'>"
+p172
+sS'date'
+p173
+S'Mon Jun  6 15:56:41 2011'
+p174
+sS'response'
+p175
+(dp176
+S'status'
+p177
+S'200'
+p178
+sg51
+S'<cStringIO.StringO object at 0x8b84940>'
+p179
+sg62
+S"<SimpleCookie: session_id_css_sprite='121.241.218.132-42b54583-9b20-4635-85bc-79277f1b99d0'>"
+p180
+sS'session_locked'
+p181
+S'True'
+p182
+sS'subtitle'
+p183
+S"<lazyT 'customize me!'>"
+p184
+sS'title'
+p185
+S"'css_sprite'"
+p186
+sS'session_file'
+p187
+S"<open file '/home/www-data/web2py/applications/c...4635-85bc-79277f1b99d0', mode 'rb+' at 0x9152a88>"
+p188
+sS'flash'
+p189
+S"''"
+p190
+sS'session_new'
+p191
+g71
+sS'session_id'
+p192
+S"'121.241.218.132-42b54583-9b20-4635-85bc-79277f1b99d0'"
+p193
+sS'headers'
+p194
+S"<Storage {'Expires': 'Mon, 06 Jun 2011 13:56:40 ...he, must-revalidate, post-check=0, pre-check=0'}>"
+p195
+sS'meta'
+p196
+S"<Storage {'keywords': 'web2py, python, framework... 'Web2py Enterprise Framework', 'author': 'you'}>"
+p197
+sS'session_filename'
+p198
+S"'/home/www-data/web2py/applications/css_sprite/se....241.218.132-42b54583-9b20-4635-85bc-79277f1b99d0'"
+p199
+sS'postprocessing'
+p200
+S'[]'
+p201
+sS'menu'
+p202
+S"[(<lazyT 'Home'>, False, <gluon.html.XML object at 0x9a5038c>, []), (<lazyT 'This App'>, False, <gluon.html.XML object at 0x9a506ac>, [(<lazyT 'Controller'>, False, <gluon.html.XML object at 0x9a50fcc>), (<lazyT 'View'>, False, <gluon.html.XML object at 0x9f48bec>), (<lazyT 'Layout'>, False, <gluon.html.XML object at 0x9f487ac>), (<lazyT 'Stylesheet'>, False, <gluon.html.XML object at 0x9f4842c>), (<lazyT 'DB Model'>, False, <gluon.html.XML object at 0x9f48fec>), (<lazyT 'Menu Model'>, False, <gluon.html.XML object at 0x9f4802c>), (<lazyT 'Database'>, False, <gluon.html.XML object at 0x9f486ac>), (<lazyT 'Errors'>, False, <gluon.html.XML object at 0x9f4854c>), (<lazyT 'About'>, False, <gluon.html.XML object at 0x9f4850c>)]), (<lazyT 'Resources'>, False, None, [(<lazyT 'Documentation'>, False, 'http://www.web2py.com/book', [(<lazyT 'Preface'>, False, 'http://www.web2py.com/book/default/chapter/00'), (<lazyT 'Introduction'>, False, 'http://www.web2py.com/book/default/chapter/01'), (<lazyT 'Python'>, False, 'http://www.web2py.com/book/default/chapter/02'), (<lazyT 'Overview'>, False, 'http://www.web2py.com/book/default/chapter/03'), (<lazyT 'The Core'>, False, 'http://www.web2py.com/book/default/chapter/04'), (<lazyT 'The Views'>, False, 'http://www.web2py.com/book/default/chapter/05'), (<lazyT 'Database'>, False, 'http://www.web2py.com/book/default/chapter/06'), (<lazyT 'Forms and Validators'>, False, 'http://www.web2py.com/book/default/chapter/07'), (<lazyT 'Access Control'>, False, 'http://www.web2py.com/book/default/chapter/08'), (<lazyT 'Services'>, False, 'http://www.web2py.com/book/default/chapter/09'), (<lazyT 'Ajax Recipes'>, False, 'http://www.web2py.com/book/default/chapter/10'), (<lazyT 'Deployment Recipes'>, False, 'http://www.web2py.com/book/default/chapter/11'), (<lazyT 'Other Recipes'>, False, 'http://www.web2py.com/book/default/chapter/12'), (<lazyT 'Buy this book'>, False, 'http://stores.lulu.com/web2py')]), (<lazyT 'Community'>, False, None, [(<lazyT 'Groups'>, False, 'http://www.web2py.com/examples/default/usergroups'), (<lazyT 'Twitter'>, False, 'http://twitter.com/web2py'), (<lazyT 'Live chat'>, False, 'http://mibbit.com/?channel=%23web2py&server=irc.mibbit.net'), (<lazyT 'User Voice'>, False, 'http://web2py.uservoice.com/')]), (<lazyT 'Web2py'>, False, 'http://www.web2py.com', [(<lazyT 'Download'>, False, 'http://www.web2py.com/examples/default/download'), (<lazyT 'Support'>, False, 'http://www.web2py.com/examples/default/support'), (<lazyT 'Quick Examples'>, False, 'http://web2py.com/examples/default/examples'), (<lazyT 'FAQ'>, False, 'http://web2py.com/AlterEgo'), (<lazyT 'Free Applications'>, False, 'http://web2py.com/appliances'), (<lazyT 'Plugins'>, False, 'http://web2py.com/plugins'), (<lazyT 'Recipes'>, False, 'http://web2pyslices.com/'), (<lazyT 'Demo'>, False, 'http://web2py.com/demo_admin'), (<lazyT 'Semantic'>, False, 'http://web2py.com/semantic'), (<lazyT 'Layouts'>, False, 'http://web2py.com/layouts'), (<lazyT 'Videos'>, False, 'http://www.web2py.com/examples/default/videos/')])])]"
+p203
+sS'_view_environment'
+p204
+S"{'A': <class 'gluon.html.A'>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'CENTER': <class 'gluon.html.CENTER'>, 'CLEANUP': <class 'gluon.validators.CLEANUP'>, 'CODE': <class 'gluon.html.CODE'>, 'CRYPT': <class 'gluon.validators.CRYPT'>, ...}"
+p205
+sS'session_id_name'
+p206
+S"'session_id_css_sprite'"
+p207
+sS'_caller'
+p208
+S'<function <lambda> at 0x8f9ba04>'
+p209
+sS'files'
+p210
+S'[]'
+p211
+sS'view'
+p212
+S"'default/upload.html'"
+p213
+ssS'locals'
+p214
+(dp215
+S'r'
+S"'qqfile'"
+p216
+sS'filename'
+p217
+S"FieldStorage('qqfile', 'C:\\\\394046\\\\vobs\\\\JPP\\\\P...7\\xdf^b\\x88>\\x06_\\x00\\x00\\x00\\x00IEND\\xaeB`\\x82')"
+p218
+sssS'traceback'
+p219
+S'Traceback (most recent call last):\n  File "/home/www-data/web2py/gluon/restricted.py", line 188, in restricted\n    exec ccode in environment\n  File "/home/www-data/web2py/applications/css_sprite/controllers/default.py", line 95, in <module>\n  File "/home/www-data/web2py/gluon/globals.py", line 124, in <lambda>\n    self._caller = lambda f: f()\n  File "/home/www-data/web2py/applications/css_sprite/controllers/default.py", line 26, in upload\n    logger.debug(\'New file uploading : \' + filename)\nTypeError: cannot concatenate \'str\' and \'instance\' objects\n'
+p220
+s.

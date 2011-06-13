@@ -1,0 +1,79 @@
+(dp1
+S'data_preview'
+p2
+S'/home/www-data/web2py/applications/css_sprite/static/rendered/rendered-bb25da3c-8b8b-11e0-a6d0-3b0b55a66bc1.html'
+p3
+sS'data_img'
+p4
+(lp5
+S'<style type="text/css">\n.wsa{\nbackground-image : url("rendered-bb25da3c-8b8b-11e0-a6d0-3b0b55a66bc1.png");\n}\n</style>'
+p6
+aS'<!-- File : action_delete.gif -->'
+p7
+aS'<div class="wsa" style="background-position : -0px 0px; width : 16px; height : 16px;"></div>'
+p8
+aS'<!-- File : action_down.gif -->'
+p9
+aS'<div class="wsa" style="background-position : -16px 0px; width : 16px; height : 16px;"></div>'
+p10
+aS'<!-- File : action_export.gif -->'
+p11
+aS'<div class="wsa" style="background-position : -32px 0px; width : 16px; height : 16px;"></div>'
+p12
+aS'<!-- File : action_help.gif -->'
+p13
+aS'<div class="wsa" style="background-position : -48px 0px; width : 16px; height : 16px;"></div>'
+p14
+aS'<!-- File : action_import.gif -->'
+p15
+aS'<div class="wsa" style="background-position : -64px 0px; width : 16px; height : 16px;"></div>'
+p16
+aS'<!-- File : action_move.gif -->'
+p17
+aS'<div class="wsa" style="background-position : -80px 0px; width : 16px; height : 16px;"></div>'
+p18
+aS'<!-- File : action_print.gif -->'
+p19
+aS'<div class="wsa" style="background-position : -96px 0px; width : 16px; height : 16px;"></div>'
+p20
+aS'<!-- File : action_refresh.gif -->'
+p21
+aS'<div class="wsa" style="background-position : -112px 0px; width : 16px; height : 16px;"></div>'
+p22
+aS'<!-- File : action_right.gif -->'
+p23
+aS'<div class="wsa" style="background-position : -128px 0px; width : 9px; height : 10px;"></div>'
+p24
+aS'<!-- File : action_rss.gif -->'
+p25
+aS'<div class="wsa" style="background-position : -137px 0px; width : 16px; height : 16px;"></div>'
+p26
+aS'<!-- File : action_settings.gif -->'
+p27
+aS'<div class="wsa" style="background-position : -153px 0px; width : 16px; height : 16px;"></div>'
+p28
+aS'<!-- File : action_source.gif -->'
+p29
+aS'<div class="wsa" style="background-position : -169px 0px; width : 16px; height : 16px;"></div>'
+p30
+aS'<!-- File : action_top.gif -->'
+p31
+aS'<div class="wsa" style="background-position : -185px 0px; width : 16px; height : 16px;"></div>'
+p32
+aS'<!-- File : action_up.gif -->'
+p33
+aS'<div class="wsa" style="background-position : -201px 0px; width : 16px; height : 16px;"></div>'
+p34
+aS'<!-- File : add.gif -->'
+p35
+aS'<div class="wsa" style="background-position : -217px 0px; width : 16px; height : 16px;"></div>'
+p36
+asS'uuid'
+p37
+S'ad763486-8b8b-11e0-bab7-3b0b55a66bc1'
+p38
+sS'file_dest'
+p39
+S'/css_sprite/static/rendered/rendered-bb25da3c-8b8b-11e0-a6d0-3b0b55a66bc1.png'
+p40
+s.

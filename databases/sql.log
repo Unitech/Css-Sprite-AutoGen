@@ -1,0 +1,68 @@
+timestamp: 2010-12-20T16:50:53.600529
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512)
+);
+success!
+timestamp: 2010-12-20T16:50:53.694699
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2010-12-20T16:50:53.843960
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    group_id INTEGER REFERENCES auth_group(id) ON DELETE CASCADE
+);
+success!
+timestamp: 2010-12-20T16:50:54.005276
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group(id) ON DELETE CASCADE,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2010-12-20T16:50:54.159148
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2010-12-20T17:15:35.369524
+CREATE TABLE file(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    file CHAR(512)
+);
+success!
+timestamp: 2010-12-21T10:23:40.774262
+ALTER TABLE file ADD ns CHAR(512);
+timestamp: 2010-12-21T11:56:54.187846
+CREATE TABLE upload(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    ns CHAR(512),
+    file CHAR(512)
+);
+success!
+timestamp: 2010-12-21T17:24:56.569377
+CREATE TABLE rendered(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    usr CHAR(512),
+    file CHAR(512)
+);
+success!

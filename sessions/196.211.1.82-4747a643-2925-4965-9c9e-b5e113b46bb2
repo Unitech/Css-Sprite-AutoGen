@@ -1,0 +1,67 @@
+(dp1
+S'data_preview'
+p2
+S'/home/www-data/web2py/applications/css_sprite/static/rendered/rendered-666725c8-8b72-11e0-8996-3b0b55a66bc1.html'
+p3
+sS'data_img'
+p4
+(lp5
+S'<style type="text/css">\n.wsa{\nbackground-image : url("rendered-666725c8-8b72-11e0-8996-3b0b55a66bc1.png");\n}\n</style>'
+p6
+aS'<!-- File : cc_jcb.jpg -->'
+p7
+aS'<div class="wsa" style="background-position : -0px 0px; width : 23px; height : 22px;"></div>'
+p8
+aS'<!-- File : cc_master.jpg -->'
+p9
+aS'<div class="wsa" style="background-position : -23px 0px; width : 38px; height : 22px;"></div>'
+p10
+aS'<!-- File : cc_american.jpg -->'
+p11
+aS'<div class="wsa" style="background-position : -61px 0px; width : 38px; height : 22px;"></div>'
+p12
+aS'<!-- File : cc_visa.jpg -->'
+p13
+aS'<div class="wsa" style="background-position : -99px 0px; width : 38px; height : 22px;"></div>'
+p14
+aS'<!-- File : icon__adr_call.png -->'
+p15
+aS'<div class="wsa" style="background-position : -137px 0px; width : 16px; height : 22px;"></div>'
+p16
+aS'<!-- File : icon_adr_map_pin.png -->'
+p17
+aS'<div class="wsa" style="background-position : -153px 0px; width : 16px; height : 22px;"></div>'
+p18
+aS'<!-- File : icon_soc_facebook.png -->'
+p19
+aS'<div class="wsa" style="background-position : -169px 0px; width : 24px; height : 24px;"></div>'
+p20
+aS'<!-- File : icon_soc_rss.png -->'
+p21
+aS'<div class="wsa" style="background-position : -193px 0px; width : 24px; height : 24px;"></div>'
+p22
+aS'<!-- File : icon_soc_twitter.png -->'
+p23
+aS'<div class="wsa" style="background-position : -217px 0px; width : 24px; height : 24px;"></div>'
+p24
+aS'<!-- File : price_badge.png -->'
+p25
+aS'<div class="wsa" style="background-position : -241px 0px; width : 88px; height : 89px;"></div>'
+p26
+aS'<!-- File : icon_news.png -->'
+p27
+aS'<div class="wsa" style="background-position : -329px 0px; width : 74px; height : 70px;"></div>'
+p28
+aS'<!-- File : special_offer.png -->'
+p29
+aS'<div class="wsa" style="background-position : -403px 0px; width : 64px; height : 61px;"></div>'
+p30
+asS'uuid'
+p31
+S'04d0233a-8b83-11e0-bab7-3b0b55a66bc1'
+p32
+sS'file_dest'
+p33
+S'/css_sprite/static/rendered/rendered-666725c8-8b72-11e0-8996-3b0b55a66bc1.png'
+p34
+s.

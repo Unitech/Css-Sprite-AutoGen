@@ -1,0 +1,23 @@
+(dp1
+S'data_preview'
+p2
+S'/home/www-data/web2py/applications/css_sprite/static/rendered/rendered-87b69992-82ea-11e0-89fe-879589a30d70.html'
+p3
+sS'data_img'
+p4
+(lp5
+S'<style type="text/css">\n.wsa{\nbackground-image : url("rendered-87b69992-82ea-11e0-89fe-879589a30d70.png");\n}\n</style>'
+p6
+aS'<!-- File : made-in-aviary.png -->'
+p7
+aS'<div class="wsa" style="background-position : -0px 0px; width : 182px; height : 252px;"></div>'
+p8
+asS'uuid'
+p9
+S'97e29b90-82ea-11e0-9b03-879589a30d70'
+p10
+sS'file_dest'
+p11
+S'/css_sprite/static/rendered/rendered-87b69992-82ea-11e0-89fe-879589a30d70.png'
+p12
+s.
